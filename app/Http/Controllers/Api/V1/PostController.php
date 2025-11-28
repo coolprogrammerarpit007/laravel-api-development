@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class StoryController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return "get Index data successfully!";
+        return ['data' => 'Get all indexed data'];
     }
 
     /**
@@ -19,7 +20,7 @@ class StoryController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -27,7 +28,10 @@ class StoryController extends Controller
      */
     public function store(Request $request)
     {
-        return "data created successfully!";
+        //
+        return [
+            'msg' => 'data has been created successfully!'
+        ];
     }
 
     /**
@@ -35,7 +39,7 @@ class StoryController extends Controller
      */
     public function show(string $id)
     {
-        return "data has been fetched successfully! of Story Id:  " . $id;
+        return 'data of Id: ' . $id . ' has been fetched successfully!';
     }
 
     /**
@@ -51,7 +55,7 @@ class StoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        return "data updated successfully of Id: " . $id;
+        return 'data of Id: ' . $id . ' has been updated successfully! ';
     }
 
     /**
@@ -59,6 +63,6 @@ class StoryController extends Controller
      */
     public function destroy(string $id)
     {
-        return "data deleted of Id: " . $id;
+        return 'data of Id: ' . $id . ' has been deleted finally!';
     }
 }
